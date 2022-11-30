@@ -27,8 +27,8 @@ export class TaskController {
 
   @Get()
   async findAll(
-    @Query('skip', ParseIntPipe) skip: number,
-    @Query('limit', ParseIntPipe) limit: number
+    @Query('skip') skip: number,
+    @Query('limit') limit: number
   ): Promise<Task[]> {
     return await this.taskService.findAll(skip, limit);
   }
