@@ -4,6 +4,8 @@
 
 ## Get task list
 
+Both query parameters are optional
+
 > GET /tasks?skip=0&limit=10
 
 Response Example (200 OK)
@@ -86,6 +88,8 @@ Response Example (201 Created)
 ## Edit task by id
 
 > PUT /tasks/{id}
+
+Both parameters are optional
 
 Body Example
 
