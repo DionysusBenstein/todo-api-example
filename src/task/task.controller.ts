@@ -14,7 +14,8 @@ import {
   Param,
   Delete,
   NotFoundException,
-  ParseIntPipe
+  ParseIntPipe,
+  DefaultValuePipe
 } from '@nestjs/common';
 import { ValidatePayloadExistsPipe } from './pipes/validation.pipe';
 
@@ -27,8 +28,8 @@ export class TaskController {
 
   @Get()
   async findAll(
-    @Query('skip') skip: number,
-    @Query('limit') limit: number
+    @Query('skip', new DefaultValuePipe(0)) skip: number,
+    @Query('limit', new DefaultValuePipe(10)) limit: number
   ): Promise<Task[]> {
     return await this.taskService.findAll(skip, limit);
   }

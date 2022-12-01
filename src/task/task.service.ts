@@ -12,7 +12,7 @@ export class TaskService {
     private taskRepository: Repository<Task>
   ) {}
 
-  async findAll(skip = 0, limit = 10): Promise<Task[]>  {
+  async findAll(skip: number, limit: number): Promise<Task[]>  {
     return await this.taskRepository.find({
       skip,
       take: limit
