@@ -121,3 +121,16 @@ Response Example (200 OK)
     "message": "success"
 }
 ```
+
+## Delete all tasks
+
+> DELETE /tasks
+
+Response Example (200 OK)
+
+``` javascript
+{
+    "statusCode": 200,
+    "message": "success"
+}
+```

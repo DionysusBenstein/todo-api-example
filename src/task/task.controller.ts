@@ -78,4 +78,9 @@ export class TaskController {
       throw new NotFoundException(`Task with id '${id}' not found`);
     }
   }
+
+  @Delete()
+  async removeAll(): Promise<void> {
+    return await this.taskService.removeAll();
+  }
 }

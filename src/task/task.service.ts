@@ -45,4 +45,8 @@ export class TaskService {
   async remove(id: number): Promise<DeleteResult> {
     return await this.taskRepository.delete(id);
   }
+
+  async removeAll(): Promise<void> {
+    return await this.taskRepository.clear();
+  }
 }
