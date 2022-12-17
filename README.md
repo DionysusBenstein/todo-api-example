@@ -14,18 +14,21 @@ Response Example (200 OK)
 {
     "statusCode": 200,
     "message": "success",
-    "data": [
-        {
-            "id": 5,
-            "username": "govnoZalupa",
-            "email": "govnoZalupa@gmail.com",
-            "description": "asu asu asuzhdau",
-            "isDone": false,
-            "isEdited": false,
-            "createdAt": "2022-11-30T12:08:55.000Z",
-            "updatedAt": "2022-11-30T12:08:55.000Z"
-        }
-    ]
+    "data": {
+        "totalTaskCount": 1,
+        "taskList": [
+            {
+                "id": 6,
+                "username": "govnoZalupa",
+                "email": "govnoZalupa@gmail.com",
+                "description": "asu asu asuzhdau",
+                "isDone": false,
+                "isEdited": false,
+                "createdAt": "2022-12-17T20:25:05.000Z",
+                "updatedAt": "2022-12-17T20:25:05.000Z"
+            }
+        ]
+    }
 }
 ```
 

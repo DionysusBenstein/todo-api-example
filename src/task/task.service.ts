@@ -10,13 +10,20 @@ export class TaskService {
   constructor(
     @InjectRepository(Task)
     private taskRepository: Repository<Task>
-  ) {}
+  ) { }
 
-  async findAll(skip: number, limit: number): Promise<Task[]>  {
-    return await this.taskRepository.find({
-      skip,
-      take: limit
-    });
+  async findAll(skip: number, limit: number):
+  Promise<{ totalTaskCount: number, taskList: Task[] }> {
+    const [taskList, totalTaskCount] = await this.taskRepository
+      .createQueryBuilder('task')
+      .offset(skip)
+      .limit(limit)
+      .getManyAndCount()
+
+    return {
+      totalTaskCount,
+      taskList
+    };
   }
 
   async findOne(id: number): Promise<Task> {

@@ -30,7 +30,7 @@ export class TaskController {
   async findAll(
     @Query('skip', new DefaultValuePipe(0)) skip: number,
     @Query('limit', new DefaultValuePipe(10)) limit: number
-  ): Promise<Task[]> {
+  ): Promise<{ totalTaskCount: number, taskList: Task[] }> {
     return await this.taskService.findAll(skip, limit);
   }
 
